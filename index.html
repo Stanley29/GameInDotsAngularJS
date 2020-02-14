@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html ng-app="gameApp">
+<head>
+   <meta charset="utf-8">
+    <title>Game In Dots</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+</head>
+<body ng-controller="GameController">
+   <table style="width:100%">
+  
+  <tr >
+    <td style="width: 50%" class="top-row">
+
+      <div class="dropdown">
+        <button class="dropbtn" id="gameselector">Pickup game mode</button>
+        <div class="dropdown-content">
+        <a href="#" id="select0" ng-click="reply_click1($event)">Easy</a>
+        <a href="#" id="select1" ng-click="reply_click1($event)">Normal</a>
+        <a href="#" id="select2" ng-click="reply_click1($event)">Hard</a>
+      </div>
+      </div>
+      
+        <div class="dropdown">
+          <input type="text" class="input" name="firstname" id="first_name" required> 
+        </div>
+        <div class="dropdown">
+          <button class="button button4" id="playButton" ng-click="playGame()">PLAY</button>
+        </div>
+      
+      
+     
+    </td style="width: 50%" class="top-row">
+    <td>
+      <h2>Leader Board</h2>
+    </td>    
+  </tr>
+  <h1></h1>
+  <tr>
+    <td>
+      <h3 id="winner">Message here</h3>
+      <div class="game-content" id="game_div">
+        <table class="game" id="game_0">
+        <tr>
+          <td><button class="button1" id="btn0" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn1" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn2" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn3" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn4" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn5" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn6" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn7" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn8" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn9" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn10" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn11" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn12" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn13" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn14" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn15" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn16" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn17" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn18" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn19" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn20" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn21" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn22" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn23" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+          <td><button class="button1" id="btn24" ng-click="reply_click($event)" ng-style="btnStyle"></button></td>
+        </tr>
+      </table>
+      </br>
+      </br>
+      <table class="game01" id="game_1">
+        <tr>
+          <td><button class="button1" id="btn00" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn01" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn02" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn03" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn04" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn05" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn06" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn07" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn08" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn09" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn010" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn011" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn012" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn013" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn014" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn015" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn016" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn017" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn018" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn019" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn020" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn021" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn022" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn023" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn024" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn025" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn026" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn027" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn028" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn029" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn030" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn031" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn032" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn033" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn034" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn035" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn036" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn037" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn038" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn039" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn040" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn041" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn042" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn043" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn044" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn045" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn046" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn047" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn048" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn049" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn050" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn051" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn052" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn053" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn054" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn055" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn056" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn057" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn058" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn059" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn060" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn061" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn062" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn063" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn064" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn065" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn066" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn067" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn068" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn069" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn070" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn071" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn072" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn073" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn074" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn075" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn076" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn077" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn078" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn079" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn080" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn081" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn082" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn083" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn084" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn085" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn086" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn087" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn088" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn089" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button1" id="btn090" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn091" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn092" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn093" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn094" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn095" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn096" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn097" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn098" ng-click="reply_click($event)"></button></td>
+          <td><button class="button1" id="btn099" ng-click="reply_click($event)"></button></td>
+        </tr>
+      </table>
+      </br>
+      </br>
+      <table class="game02" id="game_2">
+        <tr>
+          <td><button class="button2" id="btn000" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn001" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn002" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn003" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn004" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn005" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn006" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn007" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn008" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn009" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0010" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0011" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0012" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0013" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0014" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0015" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0016" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0017" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0018" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0019" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0020" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0021" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0022" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0023" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0024" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0025" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0026" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0027" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0028" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0029" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0030" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0031" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0032" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0033" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0034" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0035" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0036" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0037" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0038" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0039" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0040" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0041" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0042" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0043" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0044" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0045" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0046" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0047" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0048" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0049" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0050" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0051" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0052" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0053" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0054" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0055" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0056" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0057" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0058" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0059" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0060" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0061" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0062" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0063" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0064" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0065" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0066" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0067" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0068" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0069" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0070" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0071" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0072" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0073" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0074" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0075" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0076" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0077" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0078" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0079" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0080" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0081" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0082" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0083" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0084" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0085" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0086" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0087" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0088" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0089" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0090" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0091" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0092" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0093" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0094" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0095" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0096" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0097" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0098" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0099" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn00100" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn00101" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn00102" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn00103" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn00104" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0105" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0106" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0107" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0108" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0109" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0110" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0111" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0112" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0113" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0114" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0115" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0116" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0117" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0118" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0119" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0120" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0121" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0122" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0123" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0124" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0125" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0126" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0127" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0128" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0129" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0130" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0131" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0132" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0133" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0134" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0135" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0136" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0137" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0138" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0139" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0140" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0141" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0142" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0143" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0144" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0145" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0146" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0147" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0148" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0149" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0150" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0151" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0152" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0153" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0154" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0155" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0156" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0157" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0158" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0159" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0160" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0161" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0162" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0163" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0164" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0165" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0166" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0167" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0168" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0169" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0170" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0171" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0172" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0173" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0174" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0175" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0176" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0177" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0178" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0179" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0180" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0181" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0182" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0183" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0184" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0185" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0186" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0187" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0188" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0189" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0190" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0191" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0192" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0193" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0194" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0195" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0196" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0197" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0198" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0199" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0200" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0201" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0202" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0203" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0204" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0205" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0206" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0207" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0208" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0209" ng-click="reply_click($event)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="button2" id="btn0210" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0211" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0212" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0213" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0214" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0215" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0216" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0217" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0218" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0219" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0220" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0221" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0222" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0223" ng-click="reply_click($event)"></button></td>
+          <td><button class="button2" id="btn0224" ng-click="reply_click($event)"></button></td>
+        </tr>
+      </table>
+      </div>
+      
+    </td>
+    <td>
+      <div class="FixedHeightContainer">
+        <div class="Content">
+          <table class="board" id="winner_board">
+          
+
+            <thead>
+              <tr class="board-row">
+                  <th>User Name</th>
+                  <th>Date and Time</th>
+                                    
+              </tr>
+          </thead>
+          <tbody>
+              <!--repeat this table row for each item in items-->
+              <tr ng-repeat="x in myData">
+                  <td>{{x.winner}}</td>
+                  <td>{{x.date}}</td>
+                  
+              </tr>
+          </tbody>
+            
+          </table>
+        </div>
+        
+      </div>
+      
+    </td>    
+  </tr>
+ 
+</table>
+<h1 id="test">Result transfer</h1>>
+<!--<h1 id="test1">Test Items</h1>
+<h1 id="test2">Test Items</h1>
+<h1 id="test3">Test Items</h1>
+<div id="json_result"></div>-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script type="text/javascript">
+        var gameApp = angular.module('gameApp', []);
+</script>
+<script src="js/controllers/GameController.js"></script>
+
+</body>
+    Copyright &copy; - 2020
+</html>
